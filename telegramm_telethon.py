@@ -7,9 +7,7 @@ api_hash = 'sfghdfhdfghdfghdfgh5434'
 client = TelegramClient('session_name', api_id, api_hash)
 
 problems = []  # Массив с пулом проблем отловленных по условию
-Progs1C = ["CHL-SRV-1C_ITAN2020", "CHL-SRV-1C_ShopServ", "RCH-SRV-1C_AIR", "RCH-SRV-1C_Air-BASE", "RCH-SRV-1C_Archie",
-           "RCH-SRV-1C_Archie-BASE", "RCH-SRV-TERMINAL03-SQL", "SQLBACKUP_BACKUPSERV", "SQLBACKUP_NORKO1",
-           "SQLBACKUP_PLUHINXP1", "SQLBACKUP_SITMAN"]  # массив для программистов 1С
+Progs1C = ["xxxxx", "xxxxx2", "xxxxx3", ........"xxxx8"]  # массив для программистов 1С
 
 
 @client.on(events.NewMessage)
@@ -23,7 +21,7 @@ async def my_event_handler(event):
                 problems.append(pr_id)
                 print(value.split(': ')[1])
                 if value.split(': ')[1] in Progs1C:
-                    await client.send_message(-835702295, event.raw_text)  # Если в сообщении есть проблема из
+                    await client.send_message(-xxxxxxx, event.raw_text)  # Если в сообщении есть проблема из
                     #  пула Progs1C то пересылаем сигнал ответственному человеку за 1С
                     print('Сообщение для ФИО о проблеме доставлено')
                 print('Проблемы с HOST', value.split(': ')[1])  # Вывод в консоль инфо о проблеме (можно убрать)
@@ -38,7 +36,7 @@ async def my_event_handler(event):
                 print('ИД решенной проблемы: ', rs_id)
                 print(problems)
                 if value.split(': ')[1] in Progs1C:
-                    await client.send_message(-835702295, event.raw_text)  # Уведомляем ответственного, что проблема
+                    await client.send_message(-xxxxxxx, event.raw_text)  # Уведомляем ответственного, что проблема
                     # решена
                     print('Сообщение для ФИО о решении доставлено')
                 if rs_id in problems:
